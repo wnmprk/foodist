@@ -1,4 +1,4 @@
-# ->App for finding the best Zerts Recipes<-
+# zerts: search from all the best dessert recipes
 
 
 [![donutz](http://i.imgur.com/JopieXU.jpg)](http://www.youtube.com/watch?v=3mQoI_a_toU "inspiration")
@@ -9,3 +9,4 @@
 - [ ] Users can star/save recipes
 - [ ] Auto-generate grocery list of ingredients
 - [ ] Customize serving amount => adjusts ingredient amount
+- [ ] Add appz, tre-tres, sammies, etc.
