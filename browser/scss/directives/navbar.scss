@@ -4,6 +4,10 @@ navbar {
   background: white;
   border-bottom: 1px solid black;
   box-shadow: 1px 1px 14px -3px black;
+  
+  .navbar-static-top {
+    margin-bottom: 0px;
+  }
 
   .container {
     width: 91%;

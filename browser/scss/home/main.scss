@@ -1,12 +1,25 @@
 #home {
-  fullstack-logo {
-    padding-top: 30px;
-    width: 150px;
-    margin: 0 auto;
-  }
-  h1 {
-    margin-top: 40px;
-    text-align: center;
-  }
+ 	div {
+	    text-align: center;
+    }
+    h1 {
+        font-family: 'Vast Shadow';
+        font-size: 15em;
+        color: black;
+        text-shadow: 3px 3px #FF4DE9;
+        border-top: 20px double black;
+        border-bottom: 20px double black;
+        width: 750px;;
+        margin: auto;
+        margin-top: 10%;
+    }
+    button {
+        margin-top: 5%;
+    	font-size: 2em;
+    	border: 5px solid black;
+    	box-shadow: 3px 3px #FF69B4;
+    	color: black;
+    	text-shadow: 2px 2px #FF69B4;
+    	font-weight: bold;
+    }
 }
-

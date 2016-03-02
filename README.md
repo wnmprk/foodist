@@ -10,3 +10,4 @@
 - [ ] Auto-generate grocery list of ingredients
 - [ ] Customize serving amount => adjusts ingredient amount
 - [ ] Add appz, tre-tres, sammies, etc.
+- [ ] Ability to just yelp/google nearest dessert place
