@@ -1,0 +1,20 @@
+<form class='form' name="foodForm" ng-submit="foodForm.$valid && saveFood(foodData)">
+    <div class="form-group">
+        <label for="name">name</label>
+        <input type="text" ng-model="foodData.name" class="form-control" id="name" required>
+    </div>
+    <div class="form-group">
+        <label for="recipe">recipe link</label>
+        <input type="text" ng-model="foodData.recipeUrl" class="form-control" id="recipe" required>
+    </div>
+    <div class="form-group">
+        <label for="image">image link</label>
+        <input type="text" ng-model="foodData.imageUrl" class="form-control" id="image" required>
+    </div>
+    <div class="form-group">
+        <label for="tags">tags</label>
+        <input type="text" ng-model="foodData.tags" class="form-control" id="tags" placeholder="separate each tag with space">
+    </div>
+    <button ng-click='cancel()' type="cancel" class="btn btn-default">Cancel</button>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>

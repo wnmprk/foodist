@@ -36,14 +36,14 @@ router.put('/:foodId', function (req, res, next) {
 	req.food.set(req.body);
 	req.food.save()
 	.then(function () {
-	    res.json(req.food);
+        res.json(req.food);
 	})
 	.then(null, next);
 });
 
 // POST/CREATE /api/foods
 router.post('/', function (req, res, next) {
-    Food.create(req.body.food)
+    Food.create(req.body)
     .then(function (food) {
         res.status(201).send(food);
     })
