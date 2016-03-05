@@ -1,3 +1,8 @@
-<div id='foods' ng-repeat='food in foods'>
-	<food></food>
+<div id='foods'>
+	<a ui-sref='add-food'><button ng-show='user'>ADDFOOD</button></a>
+	<button ng-show='user' ng-click='logout()'>LOGOUT</button>
+	<h1>treat yo' self</h1>
+    <div ng-repeat='food in foods'>
+        <food></food>
+    </div>
 </div>

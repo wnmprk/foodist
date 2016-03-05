@@ -2,18 +2,18 @@ module.exports = {
   "DATABASE_URI": "mongodb://admin:password@ds019078.mlab.com:19078/zerts",
   "SESSION_SECRET": "Optimus Prime is my real dad",
   "TWITTER": {
-    "consumerKey": "INSERT_TWITTER_CONSUMER_KEY_HERE",
-    "consumerSecret": "INSERT_TWITTER_CONSUMER_SECRET_HERE",
-    "callbackUrl": "INSERT_TWITTER_CALLBACK_HERE"
+    "consumerKey": "GjUeNA4NjesVyuB2LaFB57bgf",
+    "consumerSecret": "lQdt6b8vWnAr40ADNcsbCaO5FPI7Yn8icInfzMivnGWMaxoUJQ",
+    "callbackUrl": "http://localhost:1337/auth/twitter/callback"
   },
   "FACEBOOK": {
-    "clientID": "INSERT_FACEBOOK_CLIENTID_HERE",
-    "clientSecret": "INSERT_FACEBOOK_CLIENT_SECRET_HERE",
-    "callbackURL": "INSERT_FACEBOOK_CALLBACK_HERE"
+    "clientID": "1581029545554633",
+    "clientSecret": "b3decbf68d3cd7a022746ebd0289b2a0",
+    "callbackURL": "http://localhost:1337/auth/facebook/callback"
   },
   "GOOGLE": {
-    "clientID": "INSERT_GOOGLE_CLIENTID_HERE",
-    "clientSecret": "INSERT_GOOGLE_CLIENT_SECRET_HERE",
-    "callbackURL": "INSERT_GOOGLE_CALLBACK_HERE"
+    "clientID": "631271023250-j6ald71mdus26hdh55oqrh5cl6uku460.apps.googleusercontent.com",
+    "clientSecret": "SE7pOCwg3iFUUSi3Y7cquqzc",
+    "callbackURL": "http://127.0.0.1:1337/auth/google/callback"
   }
 };

@@ -6,6 +6,12 @@ app.config(function($stateProvider) {
         resolve: {
             foods: function(FoodFactory) {
                 return FoodFactory.getAll();
+            },
+            user: function(AuthService) {
+                return AuthService.getLoggedInUser()
+                .then(function (user) {
+                    return user;
+                })
             }
         }
     });
@@ -14,20 +20,20 @@ app.config(function($stateProvider) {
         url: '/add-food',
         templateUrl: '/js/foods/add-food.html',
         controller: 'FoodCtrl',
-        resolve: {
-            foods: function(FoodFactory) {
-                return FoodFactory.getAll();
-            }
-            // user: function(AuthService) {
-            //     return AuthService.getLoggedInUser();
-            // }
-        }
-        // data : { authenticate: true }
+        data: { authenticate: true }
     });
 });
 
-app.controller('FoodCtrl', function($scope, $state, foods, FoodFactory) {
+app.controller('FoodCtrl', function($scope, $state, user, AuthService, foods, FoodFactory) {
     $scope.foods = foods;
+    $scope.user = user;
+    
+    $scope.logout = function() {
+        AuthService.logout()
+        .then(function () {
+           $state.go('home');
+        });
+    }
 
     $scope.saveFood = function(foodObj) {
         foodObj.name = foodObj.name.toLowerCase();

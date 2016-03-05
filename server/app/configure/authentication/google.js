@@ -14,12 +14,11 @@ module.exports = function (app) {
         clientSecret: googleConfig.clientSecret,
         callbackURL: googleConfig.callbackURL
     };
-
+    
     var verifyCallback = function (accessToken, refreshToken, profile, done) {
 
         UserModel.findOne({ 'google.id': profile.id }).exec()
             .then(function (user) {
-
                 if (user) {
                     return user;
                 } else {
@@ -48,10 +47,10 @@ module.exports = function (app) {
         ]
     }));
 
-    app.get('/auth/google/callback',
-        passport.authenticate('google', { failureRedirect: '/login' }),
+    app.get('/auth/google',
+        passport.authenticate('google', { failureRedirect: '/' }),
         function (req, res) {
-            res.redirect('/');
+            res.redirect('/foods');
         });
 
 };
