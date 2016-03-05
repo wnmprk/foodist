@@ -1,14 +1,13 @@
 'use strict';
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
-// var _ = require('lodash');
 var passport = require('passport');
 var path = require('path');
 var mongoose = require('mongoose');
 var UserModel = mongoose.model('User');
 
 var ENABLED_AUTH_STRATEGIES = [
-    'local',
+    // 'local',
     'twitter',
     'facebook',
     'google'

@@ -16,13 +16,15 @@ module.exports = function (app) {
     };
     
     var verifyCallback = function (accessToken, refreshToken, profile, done) {
-
         UserModel.findOne({ 'google.id': profile.id }).exec()
             .then(function (user) {
                 if (user) {
                     return user;
                 } else {
                     return UserModel.create({
+                        name: profile.name.givenName + ' ' + profile.name.familyName,
+                        email: profile.emails[0].value,
+                        avatar: profile._json.picture,
                         google: {
                             id: profile.id
                         }
@@ -35,7 +37,6 @@ module.exports = function (app) {
                 console.error('Error creating user from Google authentication', err);
                 done(err);
             });
-
     };
 
     passport.use(new GoogleStrategy(googleCredentials, verifyCallback));
@@ -47,8 +48,8 @@ module.exports = function (app) {
         ]
     }));
 
-    app.get('/auth/google',
-        passport.authenticate('google', { failureRedirect: '/' }),
+    app.get('/auth/google/callback',
+        passport.authenticate('google', { failureRedirect: '/auth/google' }),
         function (req, res) {
             res.redirect('/foods');
         });

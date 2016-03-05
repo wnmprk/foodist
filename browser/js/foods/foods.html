@@ -1,6 +1,6 @@
 <div id='foods'>
-	<a ui-sref='add-food'><button ng-show='user'>ADDFOOD</button></a>
-	<button ng-show='user' ng-click='logout()'>LOGOUT</button>
+	<img class='buttons' ng-show='user' ng-click='logout()' src='http://i.imgur.com/Yo9HPBW.png' />
+	<a ui-sref='add-food'><img class='buttons' ng-show='user' src='http://i.imgur.com/uSxPkGC.png' /></a>
 	<h1>treat yo' self</h1>
     <div ng-repeat='food in foods'>
         <food></food>

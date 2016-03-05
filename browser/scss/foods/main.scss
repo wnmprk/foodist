@@ -7,4 +7,17 @@
         color: black;
         text-shadow: 3px 3px #FF4DE9;
 	}
+	.buttons {
+		float: right;
+		margin: 10px;
+		width: 50px;
+		border-radius: 50%;
+        box-shadow: 2px 2px #FF4DE9;
+		cursor: pointer;
+	}
+}
+
+.food-form {
+	width: 70%;
+	margin: 0 auto;
 }

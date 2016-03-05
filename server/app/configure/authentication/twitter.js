@@ -17,6 +17,8 @@ module.exports = function (app) {
 
     var createNewUser = function (token, tokenSecret, profile) {
         return UserModel.create({
+            name: profile.displayName,
+            avatar: profile.photos[0].value,
             twitter: {
                 id: profile.id,
                 username: profile.username,
@@ -58,8 +60,8 @@ module.exports = function (app) {
 
     app.get('/auth/twitter', passport.authenticate('twitter'));
 
-    app.get('/auth/twitter',
-        passport.authenticate('twitter', {failureRedirect: '/'}),
+    app.get('/auth/twitter/callback',
+        passport.authenticate('twitter', {failureRedirect: '/auth/twitter'}),
         function (req, res) {
             res.redirect('/foods');
         });

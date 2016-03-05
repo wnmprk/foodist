@@ -3,10 +3,7 @@
   box-sizing: border-box;
   background-size: cover;
   background-color: #FFFCAB;
-  background: url('http://i.imgur.com/3rhWM2y.jpg') no-repeat center center fixed;
-  background-size: cover;
 }
-
 
 @mixin clearfix {
   &:after {
@@ -17,7 +14,7 @@
 }
 
 #main {
-  padding-top: 60px;
+  padding-top: 30px;
   margin: 0 auto;
 }
 
