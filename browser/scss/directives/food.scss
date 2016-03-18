@@ -1,15 +1,14 @@
 .food .box {
-	border: 10px solid white;
-	border-radius: 10px;
+	border: 5px solid white;
     float: left;
     margin: 15px;
     position: relative;
     overflow: hidden;
     width: 350px;
     height: 250px;
-    -webkit-box-shadow: 1px 1px 1px 1px #FF4DE9;
-    -moz-box-shadow: 1px 1px 1px 1px #FF4DE9;
-    box-shadow: 1px 1px 1px 1px #FF4DE9;
+    -webkit-box-shadow: 2px 2px #FF4DE9;
+    -moz-box-shadow: 2px 2px #FF4DE9;
+    box-shadow: 2px 2px #FF4DE9;
     p {
     	font-size: 25px;
     	color: white;
@@ -53,8 +52,7 @@
         bottom: 30px;
     }
     .like.hover {
-        width: 50px;
-        height: 50px;
+        
     }
 }
 

@@ -5,13 +5,13 @@ app.config(function($stateProvider) {
         controller: 'FoodCtrl',
         resolve: {
             foods: function(FoodFactory) {
-                return FoodFactory.getAll();
+                return FoodFactory.getAll()
+                .then(function (foods) {
+                    return foods;
+                });
             },
             user: function(AuthService) {
                 return AuthService.getLoggedInUser()
-                .then(function (user) {
-                    return user;
-                })
             }
         }
     });
@@ -20,11 +20,22 @@ app.config(function($stateProvider) {
         url: '/add-food',
         templateUrl: '/js/foods/add-food.html',
         controller: 'FoodCtrl',
-        data: { authenticate: true }
+        data: { authenticate: true },
+        resolve: {
+            foods: function(FoodFactory) {
+                return FoodFactory.getAll()
+                .then(function (foods) {
+                    return foods;
+                });
+            },
+            user: function(AuthService) {
+                return AuthService.getLoggedInUser()
+            }
+        }
     });
 });
 
-app.controller('FoodCtrl', function($scope, $state, user, AuthService, foods, FoodFactory) {
+app.controller('FoodCtrl', function($scope, $state, AuthService, FoodFactory, foods, user) {
     $scope.foods = foods;
     $scope.user = user;
     

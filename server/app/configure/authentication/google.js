@@ -49,7 +49,7 @@ module.exports = function (app) {
     }));
 
     app.get('/auth/google/callback',
-        passport.authenticate('google', { failureRedirect: '/auth/google' }),
+        passport.authenticate('google', { failureRedirect: '/' }),
         function (req, res) {
             res.redirect('/foods');
         });

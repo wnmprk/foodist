@@ -1,4 +1,5 @@
 <form class='food-form' name="foodForm" ng-submit="foodForm.$valid && saveFood(foodData)">
+    <h1>add a zert!</h1>
     <div class="form-group">
         <label for="name">name</label>
         <input type="text" ng-model="foodData.name" class="form-control" id="name" required>
@@ -13,8 +14,8 @@
     </div>
     <div class="form-group">
         <label for="tags">tags</label>
-        <input type="text" ng-model="foodData.tags" class="form-control" id="tags" placeholder="separate each tag with space">
+        <input type="text" ng-model="foodData.tags" class="form-control" id="tags" placeholder="separate tags with spaces" required>
     </div>
-    <button ng-click='cancel()' type="cancel" class="btn btn-default">Cancel</button>
-    <button type="submit" class="btn btn-default">Submit</button>
+    <button ng-click='cancel()' type="button" class="form-btn">cancel</button>
+    <button type="submit" class="form-btn">submit</button>
 </form>

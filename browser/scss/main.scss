@@ -14,11 +14,9 @@
 }
 
 #main {
-  padding-top: 30px;
   margin: 0 auto;
 }
 
 @import 'directives/main';
 @import 'home/main';
-@import 'form/main';
 @import 'foods/main';
