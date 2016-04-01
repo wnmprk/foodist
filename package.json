@@ -1,7 +1,7 @@
 {
-  "name": "zerts",
+  "name": "Foodist",
   "version": "1.0.0",
-  "description": "app for desserts",
+  "description": "pinterist for food",
   "main": "server/start.js",
   "scripts": {
     "start": "nodemon --watch server -e js,html server/start.js",

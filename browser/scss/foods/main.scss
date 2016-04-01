@@ -1,17 +1,35 @@
 #foods {
-	h1 {
-		text-align: left;
-		font-size: 60px;
-        color: black;
-        text-shadow: 3px 3px #FF4DE9;
-	}
 	.buttons {
 		float: right;
-		margin: 10px;
+		margin: 20px;
+		margin-top: 50px;
 		width: 50px;
 		border-radius: 50%;
         box-shadow: 2px 2px #FF4DE9;
 		cursor: pointer;
+	}
+	input {
+		height: 50px;
+		width: 55%;
+		float: left;
+		margin: 50px;
+		position: relative;
+		overflow: hidden;
+		border: 5px solid black;
+		box-shadow: 2px 2px #FF4DE9;
+	}
+	input[type=text] {
+	    background-image: url('http://i.imgur.com/jLDrMpU.png');
+	    background-position: 5px 5px;
+	    background-size: 30px; 
+	    background-repeat: no-repeat;
+	    padding-left: 40px;
+	}
+	input:focus{
+	    outline: none;
+	}
+	.everything {
+		margin-left: 35px;
 	}
 }
 

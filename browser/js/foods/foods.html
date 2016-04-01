@@ -1,8 +1,10 @@
 <div id='foods'>
-	<img class='buttons' ng-show='user' ng-click='logout()' src='http://i.imgur.com/Yo9HPBW.png' />
-	<a ui-sref='add-food'><img class='buttons' ng-show='user' src='http://i.imgur.com/uSxPkGC.png' /></a>
-	<h1>treat yo' self</h1>
-    <div ng-repeat='food in foods'>
+    <div class='navbar'>
+	    <input id='searchbar' type='text' placeholder="search"></input>
+        <img class='buttons' ng-show='user' ng-click='logout()' src='http://i.imgur.com/Yo9HPBW.png' />
+        <a ui-sref='add-food'><img class='buttons' ng-show='user' src='http://i.imgur.com/uSxPkGC.png' /></a>
+    </div>
+    <div class='everything' ng-repeat='food in foods'>
         <food></food>
     </div>
 </div>
