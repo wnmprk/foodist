@@ -17,7 +17,7 @@ app.factory('UserFactory', function($http, AuthService) {
         });
     }
     
-    userFactory.likeFood = function (food) {
+    userFactory.likeFood = function () {
         return AuthService.getLoggedInUser()
         .then(function (user) {
             if (user) {
@@ -29,7 +29,7 @@ app.factory('UserFactory', function($http, AuthService) {
         })
     }
 
-    userFactory.unlikeFood = function (food) {
+    userFactory.unlikeFood = function () {
         
     }
     

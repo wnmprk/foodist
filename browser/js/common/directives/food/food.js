@@ -4,7 +4,7 @@ app.directive('food', ['FoodFactory', 'UserFactory', function(FoodFactory, UserF
         templateUrl: 'js/common/directives/food/food.html',
         link: function (scope, element, attribute) {
         	scope.user = UserFactory.getUser();
-        	scope.toggleLike = function(food) {
+        	scope.toggleLike = function() {
         		$state.go('add-food')
         	}
         }

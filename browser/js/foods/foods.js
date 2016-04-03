@@ -40,7 +40,7 @@ app.controller('FoodCtrl', function($scope, $state, AuthService, FoodFactory, fo
     $scope.user = user;
 
     document.getElementById('searchbar').onkeydown = function(e) {
-        if (e.keyCode == 13) {
+        if (e.keyCode === 13) {
             var query = document.getElementById('searchbar').value;
             query = query.toLowerCase().split(' ');
             console.log(query)
