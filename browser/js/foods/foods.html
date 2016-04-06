@@ -1,8 +1,15 @@
 <div id='foods'>
     <div class='navbar'>
-	    <input id='searchbar' type='text' placeholder="search"></input>
+	    <form ng-submit="search()">
+	    <input id='searchbar' type="text" ng-model="searchTerm" laceholder="search">
+	    </form>
         <img class='buttons' ng-show='user' ng-click='logout()' src='http://i.imgur.com/Yo9HPBW.png' />
         <a ui-sref='add-food'><img class='buttons' ng-show='user' src='http://i.imgur.com/uSxPkGC.png' /></a>
+    </div>
+    <div class="no-recipes" ng-show="recipes.length === 0">
+    	<h1>No matches found</h1>
+    	<h3>Find a good recipe? Add it <a ui-sref='add-food'>here</a>!</h3>
+    	<img src='http://i.imgur.com/rULiC5p.gif' />
     </div>
     <div class='everything' ng-repeat='food in foods'>
         <food></food>

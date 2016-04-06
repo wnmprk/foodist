@@ -38,6 +38,8 @@ app.config(function($stateProvider) {
 app.controller('FoodCtrl', function($scope, $state, AuthService, FoodFactory, foods, user) {
     $scope.foods = foods;
     $scope.user = user;
+    
+    $scope.recipes = [1];
 
     document.getElementById('searchbar').onkeydown = function(e) {
         if (e.keyCode === 13) {

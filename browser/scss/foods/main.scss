@@ -31,6 +31,9 @@
 	.everything {
 		margin-left: 35px;
 	}
+	.no-recipes {
+		text-align: center;
+	}
 }
 
 .food-form {
@@ -40,6 +43,13 @@
 	text-align: center;
 	.form-group {
 		margin-top: 20px;
+	}
+	input {
+		height: 50px;
+		border: 5px solid black;
+		border-radius: 0;
+		box-shadow: 2px 2px #FF4DE9;
+	    text-align: center;
 	}
 	h1 {
 		text-shadow: 1px 1px #FF4DE9;
