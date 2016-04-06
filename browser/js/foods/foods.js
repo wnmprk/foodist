@@ -1,16 +1,16 @@
-app.config(function($stateProvider) {
+app.config( $stateProvider => {
     $stateProvider.state('foods', {
         url: '/foods',
         templateUrl: 'js/foods/foods.html',
         controller: 'FoodCtrl',
         resolve: {
-            foods: function(FoodFactory) {
+            foods: (FoodFactory) => {
                 return FoodFactory.getAll()
-                    .then(function(foods) {
+                    .then( foods => {
                         return foods;
                     });
             },
-            user: function(AuthService) {
+            user: (AuthService) => {
                 return AuthService.getLoggedInUser()
             }
         }
@@ -22,20 +22,20 @@ app.config(function($stateProvider) {
         controller: 'FoodCtrl',
         data: { authenticate: true },
         resolve: {
-            foods: function(FoodFactory) {
+            foods: (FoodFactory) => {
                 return FoodFactory.getAll()
-                    .then(function(foods) {
-                        return foods;
-                    });
+                .then( foods => {
+                    return foods;
+                });
             },
-            user: function(AuthService) {
+            user: (AuthService) => {
                 return AuthService.getLoggedInUser()
             }
         }
     });
 });
 
-app.controller('FoodCtrl', function($scope, $state, AuthService, FoodFactory, foods, user) {
+app.controller('FoodCtrl', ($scope, $state, AuthService, FoodFactory, foods, user) => {
     $scope.foods = foods;
     $scope.user = user;
     
@@ -43,29 +43,34 @@ app.controller('FoodCtrl', function($scope, $state, AuthService, FoodFactory, fo
 
     document.getElementById('searchbar').onkeydown = function(e) {
         if (e.keyCode === 13) {
-            var query = document.getElementById('searchbar').value;
+            let query = document.getElementById('searchbar').value;
             query = query.toLowerCase().split(' ');
             console.log(query)
         }
     };
 
-    $scope.logout = function() {
-        AuthService.logout()
-            .then(function() {
-                $state.go('home');
-            });
+    $scope.dosomething = ($event) => {
+        $event.stopPropagation();
+        $event.preventDefault();
     }
 
-    $scope.saveFood = function(foodObj) {
+    $scope.logout = () => {
+        AuthService.logout()
+        .then( () => {
+            $state.go('home');
+        });
+    }
+
+    $scope.saveFood = (foodObj) => {
         foodObj.name = foodObj.name.toLowerCase();
         foodObj.tags = foodObj.tags.toLowerCase().split(' ');
         FoodFactory.add(foodObj)
-            .then(function() {
-                $state.go('foods');
-            });
+        .then( () => {
+            $state.go('foods');
+        });
     }
 
-    $scope.cancel = function() {
+    $scope.cancel = () => {
         $state.go('foods');
     }
 });

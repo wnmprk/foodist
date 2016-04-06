@@ -1,35 +1,35 @@
-app.factory('FoodFactory', function($http) {
-    var FoodFactory = {};
+app.factory('FoodFactory', ($http) => {
+    let FoodFactory = {};
 
     FoodFactory.getAll = function() {
         return $http.get('/api/foods')
-            .then(function(foods) {
+            .then( foods => {
                 return foods.data;
             })
     }
 
-    FoodFactory.getOne = function(foodId) {
+    FoodFactory.getOne = (foodId) => {
         return $http.get('/api/foods/' + foodId)
-            .then(function(food) {
+            .then( food => {
                 return food.data;
             })
     }
 
-    FoodFactory.add = function(foodObj) {
+    FoodFactory.add = (foodObj) => {
         return $http.post('/api/foods/', foodObj)
-            .then(function(food) {
+            .then( food => {
                 return food.data;
             })
     }
 
-    FoodFactory.edit = function(foodObj) {
+    FoodFactory.edit = (foodObj) => {
         return $http.post('/api/foods/', foodObj)
-            .then(function(food) {
+            .then( food => {
                 return food.data;
             })
     }
 
-    FoodFactory.delete = function(foodId) {
+    FoodFactory.delete = (foodId) => {
         return $http.delete('/api/foods/' + foodId)
     }
 

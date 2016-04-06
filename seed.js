@@ -17,16 +17,16 @@ name in the environment files.
 
 */
 
-var mongoose = require('mongoose');
-var Promise = require('bluebird');
-var chalk = require('chalk');
-var connectToDb = require('./server/db');
-var User = Promise.promisifyAll(mongoose.model('User'));
-var Food = Promise.promisifyAll(mongoose.model('Food'));
+const mongoose = require('mongoose');
+const Promise = require('bluebird');
+const chalk = require('chalk');
+const connectToDb = require('./server/db');
+let User = Promise.promisifyAll(mongoose.model('User'));
+let Food = Promise.promisifyAll(mongoose.model('Food'));
 
-var seedUsers = function () {
+let seedUsers = function () {
 
-    var users = [
+    let users = [
         {
             email: 'testing@fsa.com',
             password: 'password'
@@ -41,9 +41,9 @@ var seedUsers = function () {
 
 };
 
-var seedFoods = function () {
+let seedFoods = function () {
 
-    var foods = [
+    let foods = [
         {
             name: 'carrot cake with maple-cream cheese frosting',
             tags: ['cake', 'carrot', 'cream cheese', 'maple'],
@@ -122,7 +122,7 @@ var seedFoods = function () {
 
 };
 
-connectToDb.then(function () {
+connectToDb.then( () => {
     // User.findAsync({}).then(function (users) {
     //     if (users.length === 0) {
     //         return seedUsers();
@@ -130,17 +130,17 @@ connectToDb.then(function () {
     //         console.log(chalk.magenta('Seems to already be user data, exiting!'));
     //         process.kill(0);
     //     }
-    Food.findAsync({}).then(function (foods) {
+    Food.findAsync({}).then( foods => {
         if (foods.length === 0) {
             return seedFoods();
         } else {
             console.log(chalk.magenta('Seems to already be food data, exiting!'));
             process.kill(0);
         }
-    }).then(function () {
+    }).then( () => {
         console.log(chalk.green('Seed successful!'));
         process.kill(0);
-    }).catch(function (err) {
+    }).catch( err => {
         console.error(err);
         process.kill(1);
     });

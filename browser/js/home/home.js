@@ -1,11 +1,11 @@
-app.config(function ($stateProvider) {
+app.config( ($stateProvider) => {
     $stateProvider.state('home', {
         url: '/',
         templateUrl: 'js/home/home.html',
         resolve: {
-        	user: function(AuthService, $state) {
+        	user: (AuthService, $state) => {
                 return AuthService.getLoggedInUser()
-                .then(function (user) {
+                .then( user => {
                 	if (user) {
                 		$state.go('foods');
                 	}

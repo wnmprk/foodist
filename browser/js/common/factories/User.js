@@ -1,35 +1,35 @@
-app.factory('UserFactory', function($http, AuthService) {
-    var userFactory = {};
+app.factory('UserFactory', ($http, AuthService) => {
+    let userFactory = {};
 
-    userFactory.getUser = function() {
+    userFactory.getUser = () => {
         return AuthService.getLoggedInUser();
     }
     
-    userFactory.getLikes = function () {
+    userFactory.getLikes = () => {
         return AuthService.getLoggedInUser()
-        .then(function (user) {
+        .then( user => {
             if (user) {
                 return $http.get('/api/users/' + user._id + '/likes')
-                .then(function (usersLikes) {
+                .then( usersLikes => {
                     return usersLikes;
                 });
             }
         });
     }
     
-    userFactory.likeFood = function () {
+    userFactory.likeFood = () => {
         return AuthService.getLoggedInUser()
-        .then(function (user) {
+        .then( user => {
             if (user) {
                 return $http.put('/api/users/' + user._id)
-                .then(function () {
+                .then( () => {
                     
                 })
             }
         })
     }
 
-    userFactory.unlikeFood = function () {
+    userFactory.unlikeFood = () => {
         
     }
     

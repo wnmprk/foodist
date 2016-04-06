@@ -1,59 +1,58 @@
 'use strict';
-var router = require('express').Router();
+const router = require('express').Router();
 module.exports = router;
-var mongoose = require('mongoose');
-var Food = mongoose.models.Food;
-// var _ = require('lodash');
+const mongoose = require('mongoose');
+let Food = mongoose.models.Food;
 
-// var ensureAuthenticated = function (req, res, next) {
-//     if (req.isAuthenticated()) {
-//         next();
-//     } else {
-//         res.status(401).end();
-//     }
-// };
+const ensureAuthenticated = function (req, res, next) {
+    if (req.isAuthenticated()) {
+        next();
+    } else {
+        res.status(401).end();
+    }
+};
 
 // GET /api/foods
-router.get('/', function (req, res, next) {
+router.get('/', ensureAuthenticated, function (req, res, next) {
 	Food.find({})
-    .then(function (foods) {
+    .then( foods => {
         res.status(200).send(foods);
     })
     .then(null, next);
 });
 
 // GET /api/foods/:foodId
-router.get('/:foodId', function (req, res, next) {
+router.get('/:foodId', ensureAuthenticated, function (req, res, next) {
     Food.find({ _id: req.params.foodId })
-    .then(function (food) {
+    .then( food => {
         res.status(200).send(food);
     })
     .then(null, next);
 });
 
 // PUT/UPDATE /api/foods/:foodId
-router.put('/:foodId', function (req, res, next) {
+router.put('/:foodId', ensureAuthenticated, function (req, res, next) {
 	req.food.set(req.body);
 	req.food.save()
-	.then(function () {
+	.then( () => {
         res.json(req.food);
 	})
 	.then(null, next);
 });
 
 // POST/CREATE /api/foods
-router.post('/', function (req, res, next) {
+router.post('/', ensureAuthenticated, function (req, res, next) {
     Food.create(req.body)
-    .then(function (food) {
+    .then( food => {
         res.status(201).send(food);
     })
     .then(null, next);
 });
 
 // DELETE/REMOVE /api/foods/:foodId
-router.delete('/:foodId', function (req, res, next) {
+router.delete('/:foodId', ensureAuthenticated, function (req, res, next) {
     req.food.remove()
-    .then(function() {
+    .then( () => {
         res.status(204).end();
     })
     .then(null, next);
