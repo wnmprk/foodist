@@ -1,7 +1,7 @@
 <div id='foods'>
     <div class='navbar'>
 	    <form ng-submit="search()">
-	    <input id='searchbar' type="text" ng-model="searchTerm" laceholder="search">
+	    <input id='searchbar' type="text" ng-model="searchTerm" placeholder="search">
 	    </form>
         <img class='buttons' ng-show='user' ng-click='logout()' src='http://i.imgur.com/Yo9HPBW.png' />
         <a ui-sref='add-food'><img class='buttons' ng-show='user' src='http://i.imgur.com/uSxPkGC.png' /></a>
@@ -12,6 +12,6 @@
     	<img src='http://i.imgur.com/rULiC5p.gif' />
     </div>
     <div class='everything' ng-repeat='food in foods'>
-        <food ng-click='dosomething($event)'></food>
+        <food></food>
     </div>
 </div>

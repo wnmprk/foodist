@@ -17,13 +17,14 @@ app.factory('UserFactory', ($http, AuthService) => {
         });
     }
     
-    userFactory.likeFood = () => {
+    userFactory.likeFood = (userId, foodId) => {
         return AuthService.getLoggedInUser()
         .then( user => {
             if (user) {
-                return $http.put('/api/users/' + user._id)
-                .then( () => {
-                    
+                return $http.put('/api/users/' + user._id, foodId)
+                .then( (user) => {
+                    user.data.likes.push(foodId);
+                    return user.data;
                 })
             }
         })

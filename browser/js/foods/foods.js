@@ -6,9 +6,9 @@ app.config( $stateProvider => {
         resolve: {
             foods: (FoodFactory) => {
                 return FoodFactory.getAll()
-                    .then( foods => {
-                        return foods;
-                    });
+                .then( foods => {
+                    return foods;
+                });
             },
             user: (AuthService) => {
                 return AuthService.getLoggedInUser()
@@ -35,7 +35,7 @@ app.config( $stateProvider => {
     });
 });
 
-app.controller('FoodCtrl', ($scope, $state, AuthService, FoodFactory, foods, user) => {
+app.controller('FoodCtrl', ($scope, $state, AuthService, FoodFactory, UserFactory, foods, user) => {
     $scope.foods = foods;
     $scope.user = user;
     
@@ -49,9 +49,14 @@ app.controller('FoodCtrl', ($scope, $state, AuthService, FoodFactory, foods, use
         }
     };
 
-    $scope.dosomething = ($event) => {
+    $scope.toggleLike = ($event, food) => {
         $event.stopPropagation();
         $event.preventDefault();
+        // console.log(user)
+        UserFactory.likeFood(user._id, food._id)
+        .then( (user) => {
+            console.log('user contrl', user);
+        })
     }
 
     $scope.logout = () => {

@@ -33,6 +33,7 @@ router.get('/:userId', ensureAuthenticated, function (req, res, next) {
 
 // PUT/UPDATE /api/users/:userId
 router.put('/:userId', ensureAuthenticated, function (req, res, next) {
+    console.log(req.body)
     User.findByIdAndUpdate(req.params.userId, req.body, { new: true })
     .then( user => {
         res.status(201).json(user);

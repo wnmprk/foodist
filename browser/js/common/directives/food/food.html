@@ -4,7 +4,7 @@
         <img ng-src="{{ food.imageUrl }}"/>
         <span class="caption fade-caption">
 	        <p class="padded-multiline">{{ food.name }}</p>
-	        <div class="heart">❤</div>
+	        <div class="heart" ng-click='toggleLike($event, food)'>❤</div>
         </span>
         </a>
     </div>
