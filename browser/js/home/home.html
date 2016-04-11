@@ -1,5 +1,7 @@
 <section id="home">
-    <h1>foodist</h1>
+    <form ng-submit="search()">
+    <input id='searchbar' type="text" ng-model="searchTerm" placeholder="search">
+    </form>
     <div>
         <a href="/auth/twitter" target="_self">
             <img src='http://i.imgur.com/A70V5NC.png' />

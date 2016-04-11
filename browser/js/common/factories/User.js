@@ -5,33 +5,16 @@ app.factory('UserFactory', ($http, AuthService) => {
         return AuthService.getLoggedInUser();
     }
     
-    userFactory.getLikes = () => {
+    userFactory.toggleLike = (food) => {
         return AuthService.getLoggedInUser()
         .then( user => {
             if (user) {
-                return $http.get('/api/users/' + user._id + '/likes')
-                .then( usersLikes => {
-                    return usersLikes;
-                });
-            }
-        });
-    }
-    
-    userFactory.likeFood = (userId, foodId) => {
-        return AuthService.getLoggedInUser()
-        .then( user => {
-            if (user) {
-                return $http.put('/api/users/' + user._id, foodId)
-                .then( (user) => {
-                    user.data.likes.push(foodId);
+                return $http.put('/api/users/' + user._id + '/likes', food)
+                .then( () => {
                     return user.data;
                 })
             }
         })
-    }
-
-    userFactory.unlikeFood = () => {
-        
     }
     
     return userFactory;

@@ -1,71 +1,82 @@
 #foods {
 	.buttons {
 		float: right;
-		margin: 20px;
-		margin-top: 50px;
+		margin: 20px 15px;
 		width: 50px;
-		border-radius: 50%;
-        box-shadow: 2px 2px #FF4DE9;
 		cursor: pointer;
 	}
 	input {
 		height: 50px;
 		width: 55%;
 		float: left;
-		margin: 50px;
+		margin: 20px;
 		position: relative;
 		overflow: hidden;
-		border: 5px solid black;
-		box-shadow: 2px 2px #FF4DE9;
+		border: none;
+		background-color: white;
 	}
 	input[type=text] {
 	    background-image: url('http://i.imgur.com/jLDrMpU.png');
-	    background-position: 5px 5px;
+	    background-position: 10px 10px;
 	    background-size: 30px; 
 	    background-repeat: no-repeat;
-	    padding-left: 40px;
+	    padding-left: 45px;
 	}
 	input:focus{
 	    outline: none;
 	}
-	.everything {
-		margin-left: 35px;
-	}
 	.no-recipes {
 		text-align: center;
 	}
+	div.navbar {
+		margin: 0;
+	}
+	.everything {
+		width: 80%;
+		margin: auto;
+	}
+}
+
+$modal-color: #9f9f9f;
+
+div.modal-content {
+	background-color: $modal-color;
+	text-align: center;
+	margin-top: 10%;
+}
+
+div.modal-dialog {
+	width: 60%;
+	margin: auto;
 }
 
 .food-form {
-	padding-top: 80px;
-	width: 50%;
-	margin: 0 auto;
-	text-align: center;
+	width: 80%;
+	margin: auto;
+	background-color: $modal-color;
 	.form-group {
-		margin-top: 20px;
+		margin: 10px;
+		background-color: $modal-color;
 	}
 	input {
+		background-color: white;
 		height: 50px;
-		border: 5px solid black;
-		border-radius: 0;
-		box-shadow: 2px 2px #FF4DE9;
 	    text-align: center;
-	}
-	h1 {
-		text-shadow: 1px 1px #FF4DE9;
+	    border: none;
+	    border-radius: 0;
 	}
 	label {
+		background-color: $modal-color;
 		font-size: 20px;
 		font-weight: normal;
 	}
 	.form-btn {
 		margin: 10px;
-		background-color: transparent;
-		border: 3px solid black;
-		box-shadow: 2px 2px #FF4DE9;
+		background-color: #e3e3e3;
+		border: none;
 	}
 	.form-btn:hover, .form-btn:active {
-		background-color: #FF4DE9;
-		border: 3px solid black;
+		border: none;
+		color: black;
 	}
 }

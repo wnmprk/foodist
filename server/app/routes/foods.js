@@ -42,6 +42,8 @@ router.put('/:foodId', ensureAuthenticated, function (req, res, next) {
 
 // POST/CREATE /api/foods
 router.post('/', ensureAuthenticated, function (req, res, next) {
+    req.body.name = req.body.name.toLowerCase();
+    req.body.tags = req.body.tags.split(' ');
     Food.create(req.body)
     .then( food => {
         res.status(201).send(food);

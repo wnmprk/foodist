@@ -15,31 +15,29 @@ app.config( $stateProvider => {
             }
         }
     });
-
-    $stateProvider.state('add-food', {
-        url: '/add-food',
-        templateUrl: '/js/foods/add-food.html',
-        controller: 'FoodCtrl',
-        data: { authenticate: true },
-        resolve: {
-            foods: (FoodFactory) => {
-                return FoodFactory.getAll()
-                .then( foods => {
-                    return foods;
-                });
-            },
-            user: (AuthService) => {
-                return AuthService.getLoggedInUser()
-            }
-        }
-    });
 });
 
-app.controller('FoodCtrl', ($scope, $state, AuthService, FoodFactory, UserFactory, foods, user) => {
+app.controller('FoodCtrl', ($scope, $state, $uibModal, AuthService, FoodFactory, UserFactory, foods, user) => {
     $scope.foods = foods;
     $scope.user = user;
     
     $scope.recipes = [1];
+
+    $scope.addForm = function() {
+        var formModal = $uibModal.open({
+            animation: $scope.animationsEnabled,
+            templateUrl: '/js/foods/add-food.html',
+            controller: function () {
+                $scope.saveFood = (foodObj) => {
+                    FoodFactory.add(foodObj)
+                    .then( () => {
+                        // page does not update with new item immediately
+                        formModal.close();                
+                    });
+                }
+            }
+        })
+    }
 
     document.getElementById('searchbar').onkeydown = function(e) {
         if (e.keyCode === 13) {
@@ -49,13 +47,13 @@ app.controller('FoodCtrl', ($scope, $state, AuthService, FoodFactory, UserFactor
         }
     };
 
-    $scope.toggleLike = ($event, food) => {
+    $scope.clickHeart = ($event, food) => {
         $event.stopPropagation();
         $event.preventDefault();
-        // console.log(user)
-        UserFactory.likeFood(user._id, food._id)
-        .then( (user) => {
-            console.log('user contrl', user);
+        // $event.target.style.color = 'white'
+        UserFactory.toggleLike(food)
+        .then( () => {
+            console.log(user.name, 'un/liked', food.name);
         })
     }
 
@@ -66,16 +64,4 @@ app.controller('FoodCtrl', ($scope, $state, AuthService, FoodFactory, UserFactor
         });
     }
 
-    $scope.saveFood = (foodObj) => {
-        foodObj.name = foodObj.name.toLowerCase();
-        foodObj.tags = foodObj.tags.toLowerCase().split(' ');
-        FoodFactory.add(foodObj)
-        .then( () => {
-            $state.go('foods');
-        });
-    }
-
-    $scope.cancel = () => {
-        $state.go('foods');
-    }
 });

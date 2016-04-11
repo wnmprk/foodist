@@ -2,21 +2,28 @@
  	div {
 	    text-align: center;
     }
-    h1 {
-        font-size: 11em;
-        color: black;
-        text-shadow: 3px 3px #FF4DE9;
-        border-top: 20px double black;
-        border-bottom: 20px double black;
-        width: 750px;;
-        margin: auto;
-        margin-top: 10%;
-    }
     img {
         margin: 20px;
-        margin-top: 100px;
-        width: 100px;
+        width: 70px;
         border-radius: 50%;
-        box-shadow: 2px 2px #FF4DE9;
+    }
+    input {
+        height: 50px;
+        width: 50%;
+        margin: auto;
+        margin-left: 25%;
+        margin-top: 20%;
+        border: none;
+        background: white;
+    }
+    input[type=text] {
+        background-image: url('http://i.imgur.com/jLDrMpU.png');
+        background-position: 10px 10px;
+        background-size: 30px; 
+        background-repeat: no-repeat;
+        padding-left: 45px;
+    }
+    input:focus{
+        outline: none;
     }
 }

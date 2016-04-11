@@ -3,8 +3,8 @@
 	    <form ng-submit="search()">
 	    <input id='searchbar' type="text" ng-model="searchTerm" placeholder="search">
 	    </form>
-        <img class='buttons' ng-show='user' ng-click='logout()' src='http://i.imgur.com/Yo9HPBW.png' />
-        <a ui-sref='add-food'><img class='buttons' ng-show='user' src='http://i.imgur.com/uSxPkGC.png' /></a>
+        <img class='buttons' ng-show='user' ng-click='logout()' src='http://i.imgur.com/GF08E1B.png' />
+        <img ng-click='addForm()' class='buttons' ng-show='user' src='http://i.imgur.com/Mk3RsG6.png' />
     </div>
     <div class="no-recipes" ng-show="recipes.length === 0">
     	<h1>No matches found</h1>

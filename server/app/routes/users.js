@@ -31,11 +31,19 @@ router.get('/:userId', ensureAuthenticated, function (req, res, next) {
     .then(null, next);
 });
 
-// PUT/UPDATE /api/users/:userId
-router.put('/:userId', ensureAuthenticated, function (req, res, next) {
-    console.log(req.body)
-    User.findByIdAndUpdate(req.params.userId, req.body, { new: true })
+// PUT/UPDATE /api/users/:userId/likes
+router.put('/:userId/likes', ensureAuthenticated, function (req, res, next) {
+    User.findById(req.params.userId)
     .then( user => {
+        if (user.likes.indexOf(req.body._id) === -1) {
+            user.likes.push(req.body._id);
+            console.log('User liked something!')
+        } else {
+            var unlikeThis = user.likes.indexOf(req.body._id);
+            user.likes.splice(unlikeThis, 1);
+            console.log('User unliked something!')
+        }
+        user.save();
         res.status(201).json(user);
     })
     .then(null, next);
