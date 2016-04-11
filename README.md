@@ -1,11 +1,12 @@
-# Haverfoods: search through all the best recipes
-
+# gaverfoods: browse, add, share, plan 
 
 [![donutz](http://i.imgur.com/JopieXU.jpg)](http://www.youtube.com/watch?v=3mQoI_a_toU "inspiration")
 
 ## Features to Add: 
-- [ ] Lazy loading all recipes
+- [x] Users can sign up through social medias
+- [x] Users can add recipes
+- [x] Users can star/save recipes
+- [ ] Lazy load all recipes
 - [ ] Search recipes by name or tag
-- [ ] Users can star/save recipes
+- [ ] Users can plans multiple course meals for parties/events
 - [ ] Auto-generate grocery list of ingredients
-- [ ] Customize serving amount => adjusts ingredient amount
