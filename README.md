@@ -1,4 +1,4 @@
-# gaverfoods: browse, add, share, plan 
+# haverfoods: browse, add, share, plan 
 
 [![donutz](http://i.imgur.com/JopieXU.jpg)](http://www.youtube.com/watch?v=3mQoI_a_toU "inspiration")
 
