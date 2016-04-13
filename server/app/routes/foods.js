@@ -13,7 +13,7 @@ const ensureAuthenticated = function (req, res, next) {
 };
 
 // GET /api/foods
-router.get('/', ensureAuthenticated, function (req, res, next) {
+router.get('/', function (req, res, next) {
 	Food.find({})
     .then( foods => {
         res.status(200).send(foods);
@@ -22,7 +22,7 @@ router.get('/', ensureAuthenticated, function (req, res, next) {
 });
 
 // GET /api/foods/:foodId
-router.get('/:foodId', ensureAuthenticated, function (req, res, next) {
+router.get('/:foodId', function (req, res, next) {
     Food.find({ _id: req.params.foodId })
     .then( food => {
         res.status(200).send(food);

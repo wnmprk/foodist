@@ -1,6 +1,10 @@
 #home {
- 	div {
-	    text-align: center;
+    height: 700px;
+    background: url('http://i.imgur.com/1gP2yR8.jpg') no-repeat center center fixed;
+    background-size: cover;
+    div {
+        margin-top: 20px;
+        text-align: center;
     }
     img {
         margin: 20px;
@@ -8,22 +12,25 @@
         border-radius: 50%;
     }
     input {
-        height: 50px;
-        width: 50%;
-        margin: auto;
-        margin-left: 25%;
+        width: 60%;
+        margin-left: 20%;
         margin-top: 20%;
-        border: none;
-        background: white;
+        position: relative;
+        background: transparent;
     }
     input[type=text] {
+        font-size: 30px;
+        border: 0;
+        border-bottom: 5px solid #2F4F4F;
+        outline: 0;
         background-image: url('http://i.imgur.com/jLDrMpU.png');
         background-position: 10px 10px;
         background-size: 30px; 
         background-repeat: no-repeat;
-        padding-left: 45px;
+        padding-left: 50px;
+        padding-bottom: 10px;
     }
-    input:focus{
+    input:focus {
         outline: none;
     }
 }

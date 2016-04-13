@@ -1,11 +1,7 @@
-<div class="food">
-    <div class="box">
-    	<a href='{{ food.recipeUrl }}'>
-        <img ng-src="{{ food.imageUrl }}"/>
-        <span class="caption fade-caption">
-	        <p class="padded-multiline">{{ food.name }}</p>
-	        <div class="heart" ng-click='clickHeart($event, food)'>❤</div>
-        </span>
-        </a>
-    </div>
+<div class="food darken">
+    <img ng-src="{{ food.imageUrl }}"/>
+	<a href='{{ food.recipeUrl }}'>
+    <p class='name'>{{ food.name }}</p>
+    </a>
+    <p class="heart" ng-click='clickHeart($event, food)'>❤</p>
 </div>

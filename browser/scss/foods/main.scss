@@ -1,48 +1,46 @@
 #foods {
+	background: url('http://i.imgur.com/1gP2yR8.jpg') no-repeat center center fixed;
+	background-size: cover;
+	text-align: center;
 	.buttons {
 		float: right;
-		margin: 20px 15px;
+		margin: 30px 15px;
 		width: 50px;
 		cursor: pointer;
 	}
 	input {
-		height: 50px;
-		width: 55%;
 		float: left;
-		margin: 20px;
-		position: relative;
-		overflow: hidden;
-		border: none;
-		background-color: white;
+		background: transparent;
+		width: 40%;
+		margin: 30px;
 	}
 	input[type=text] {
-	    background-image: url('http://i.imgur.com/jLDrMpU.png');
-	    background-position: 10px 10px;
-	    background-size: 30px; 
-	    background-repeat: no-repeat;
-	    padding-left: 45px;
+		font-size: 20px;
+		border: 0;
+		border-bottom: 5px solid #2F4F4F;
+		outline: 0;
+		background-image: url('http://i.imgur.com/jLDrMpU.png');
+		background-position: 5px 0px;
+		background-size: 30px; 
+		background-repeat: no-repeat;
+		padding-left: 45px;
+		padding-bottom: 10px;
 	}
-	input:focus{
+	input:focus {
 	    outline: none;
 	}
 	.no-recipes {
 		text-align: center;
 	}
-	div.navbar {
-		margin: 0;
-	}
-	.everything {
-		width: 80%;
-		margin: auto;
-	}
 }
 
-$modal-color: #9f9f9f;
+$modal-color: #2F4F4F;
 
 div.modal-content {
 	background-color: $modal-color;
 	text-align: center;
 	margin-top: 10%;
+	color: white;
 }
 
 div.modal-dialog {
@@ -53,30 +51,24 @@ div.modal-dialog {
 .food-form {
 	width: 80%;
 	margin: auto;
-	background-color: $modal-color;
-	.form-group {
-		margin: 10px;
-		background-color: $modal-color;
-	}
+	padding-top: 20px;
 	input {
 		background-color: white;
 		height: 50px;
 	    text-align: center;
 	    border: none;
 	    border-radius: 0;
+	    margin-bottom: 20px;
 	}
-	label {
-		background-color: $modal-color;
+	input[type='text'] {
 		font-size: 20px;
-		font-weight: normal;
 	}
 	.form-btn {
-		margin: 10px;
-		background-color: #e3e3e3;
-		border: none;
-	}
-	.form-btn:hover, .form-btn:active {
-		border: none;
-		color: black;
+		margin-bottom: 10px;
+		margin-bottom: 20px;
+		border: 1px solid white;
+		height: 40px;
+		width: 80px;
+		background: #2F4F4F;
 	}
 }
