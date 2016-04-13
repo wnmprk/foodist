@@ -1,4 +1,4 @@
-# haverfoods: browse, add, share, plan 
+# m: browse, add, share, plan 
 
 [![donutz](http://i.imgur.com/JopieXU.jpg)](http://www.youtube.com/watch?v=3mQoI_a_toU "inspiration")
 
@@ -8,5 +8,5 @@
 - [x] Users can star/save recipes
 - [ ] Lazy load all recipes
 - [ ] Search recipes by name or tag
-- [ ] Users can plans multiple course meals for parties/events
+- [ ] Users can plan menus
 - [ ] Auto-generate grocery list of ingredients
