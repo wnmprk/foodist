@@ -18,6 +18,10 @@ let schema = new mongoose.Schema({
         type: String,
         required: true
     }
+    // category: {
+    //     type: String,
+    //     required: true
+    // }
 });
 
 mongoose.model('Food', schema);

@@ -21,8 +21,6 @@ app.controller('FoodCtrl', ($scope, $state, $uibModal, AuthService, FoodFactory,
     $scope.foods = foods;
     $scope.user = user;
     
-    $scope.recipes = [1];
-
     $scope.addForm = function() {
         var formModal = $uibModal.open({
             animation: $scope.animationsEnabled,
@@ -32,27 +30,24 @@ app.controller('FoodCtrl', ($scope, $state, $uibModal, AuthService, FoodFactory,
                     FoodFactory.add(foodObj)
                     .then( () => {
                         // page does not update with new item immediately
-                        formModal.close();                
+                        formModal.close();
                     });
                 }
             }
         })
     }
 
-    document.getElementById('searchbar').onkeydown = function(e) {
-        if (e.keyCode === 13) {
-            let query = document.getElementById('searchbar').value;
-            query = query.toLowerCase().split(' ');
-            console.log(query)
-        }
-    };
-
     $scope.clickHeart = ($event, food) => {
         $event.stopPropagation();
         $event.preventDefault();
-        // $event.target.style.color = 'white'
         UserFactory.toggleLike(food)
         .then( () => {
+            // obviously...does not persist
+            if ($event.target.style.color === 'red') {
+                $event.target.style.color = 'white'    
+            } else {
+                $event.target.style.color = 'red'
+            }
             console.log(user.name, 'un/liked', food.name);
         })
     }

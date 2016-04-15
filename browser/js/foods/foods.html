@@ -1,17 +1,10 @@
 <div id='foods'>
     <div class='navbar'>
-	    <form ng-submit="search()">
-	    <input id='searchbar' type="text" ng-model="searchTerm" placeholder="search">
-	    </form>
-        <img class='buttons' ng-show='user' ng-click='logout()' src='http://i.imgur.com/GF08E1B.png' />
-        <img ng-click='addForm()' class='buttons' ng-show='user' src='http://i.imgur.com/Mk3RsG6.png' />
+	    <input id='searchbar' type="text" ng-model="searchText" placeholder="search">
+        <img class='buttons' ng-show='user' ng-click='logout()' ng-src='http://i.imgur.com/GF08E1B.png' />
+        <img ng-click='addForm()' class='buttons' ng-show='user' ng-src='http://i.imgur.com/Mk3RsG6.png' />
     </div>
-    <div class="no-recipes" ng-show="recipes.length === 0">
-    	<h1>No matches found</h1>
-    	<h3>Find a good recipe? Add it <a ui-sref='add-food'>here</a>!</h3>
-    	<img src='http://i.imgur.com/rULiC5p.gif' />
-    </div>
-    <div class='everything' ng-repeat='food in foods'>
+    <div class='everything' ng-repeat='food in foods | filter:searchText'>
         <food></food>
     </div>
 </div>

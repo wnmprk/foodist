@@ -3,13 +3,17 @@
     background: url('http://i.imgur.com/1gP2yR8.jpg') no-repeat center center fixed;
     background-size: cover;
     div {
-        margin-top: 20px;
         text-align: center;
     }
     img {
-        margin: 20px;
+        margin: 2%;
         width: 70px;
         border-radius: 50%;
+    }
+    .lets.eat {
+        width: 300px;;
+        background-color: rgba(0, 0, 0, 0.2);
+        margin-top: 10%;
     }
     input {
         width: 60%;

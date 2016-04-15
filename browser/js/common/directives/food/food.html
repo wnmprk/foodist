@@ -3,5 +3,5 @@
 	<a href='{{ food.recipeUrl }}'>
     <p class='name'>{{ food.name }}</p>
     </a>
-    <p class="heart" ng-click='clickHeart($event, food)'>❤</p>
+    <p class="heart" ng-show='isLoggedIn()' ng-click='clickHeart($event, food)'>❤</p>
 </div>
