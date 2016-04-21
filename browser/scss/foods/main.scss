@@ -1,43 +1,15 @@
 #foods {
-	background: url('http://i.imgur.com/1gP2yR8.jpg') no-repeat center center fixed;
-	background-size: cover;
 	text-align: center;
-	.buttons {
-		float: right;
-		margin: 30px 15px;
-		width: 50px;
-		cursor: pointer;
-	}
-	input {
-		float: left;
-		background: transparent;
-		width: 40%;
-		margin: 30px;
-	}
-	input[type=text] {
-		font-size: 20px;
-		border: 0;
-		border-bottom: 5px solid #2F4F4F;
-		outline: 0;
-		background-image: url('http://i.imgur.com/jLDrMpU.png');
-		background-position: 5px 0px;
-		background-size: 30px; 
-		background-repeat: no-repeat;
-		padding-left: 45px;
-		padding-bottom: 10px;
-	}
-	input:focus {
-	    outline: none;
-	}
+	margin-top: 150px;
 }
 
-$modal-color: #2F4F4F;
+$modal-color: #19d2d5;
 
 div.modal-content {
-	background-color: $modal-color;
+	background-color: #e6e1df;
 	text-align: center;
 	margin-top: 10%;
-	color: white;
+	color: $modal-color;
 }
 
 div.modal-dialog {
@@ -51,21 +23,26 @@ div.modal-dialog {
 	padding-top: 20px;
 	input {
 		background-color: white;
-		height: 50px;
-	    text-align: center;
-	    border: none;
-	    border-radius: 0;
 	    margin-bottom: 20px;
+	    text-align: left;
 	}
 	input[type='text'] {
 		font-size: 20px;
+		border: 1px solid $modal-color;
 	}
 	.form-btn {
 		margin-bottom: 10px;
 		margin-bottom: 20px;
-		border: 1px solid white;
+		border: 1px solid $modal-color;
 		height: 40px;
 		width: 80px;
-		background: #2F4F4F;
+		background-color: transparent;
+	}
+	.form-btn:hover {
+		color: white;
+		background-color: $modal-color;
+	}
+	.form-btn:active {
+		outline: none;
 	}
 }

@@ -48,6 +48,7 @@ module.exports = function (app) {
                     return createNewUser(token, tokenSecret, profile);
                 }
             }).then(function (user) {
+                console.log('User has logged in through Twitter!');
                 done(null, user);
             }, function (err) {
                 console.error('Error creating user from Twitter authentication', err);
@@ -61,7 +62,7 @@ module.exports = function (app) {
     app.get('/auth/twitter', passport.authenticate('twitter'));
 
     app.get('/auth/twitter/callback',
-        passport.authenticate('twitter', {failureRedirect: '/'}),
+        passport.authenticate('twitter', { failureRedirect: '/' }),
         function (req, res) {
             res.redirect('/foods');
         });

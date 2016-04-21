@@ -1,17 +1,27 @@
-app.directive('navbar', function ($rootScope, AuthService, AUTH_EVENTS, $state) {
+app.directive('navbar', function ($rootScope, AuthService, AUTH_EVENTS, $state, $uibModal, FoodFactory) {
 
     return {
         restrict: 'E',
         scope: {},
         templateUrl: 'js/common/directives/navbar/navbar.html',
         link: function (scope) {
-
-            scope.items = [
-                { label: 'Home', state: 'home' },
-                { label: 'About', state: 'about' },
-                { label: 'Documentation', state: 'docs' },
-                { label: 'Members Only', state: 'membersOnly', auth: true }
-            ];
+            
+            scope.addForm = () => {
+                var formModal = $uibModal.open({
+                    animation: scope.animationsEnabled,
+                    templateUrl: '/js/foods/add-food.html',
+                    controller: () => {
+                        scope.saveFood = (foodObj) => {
+                            console.log('IM IN THE save food func', foodObj)
+                            FoodFactory.add(foodObj)
+                            .then( () => {
+                                // page does not update with new item immediately
+                                formModal.close();
+                            });
+                        }
+                    }
+                })
+            }
 
             scope.user = null;
 

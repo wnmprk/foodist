@@ -1,17 +1,12 @@
 <nav class="navbar navbar-static-top">
-    <div class="container">
-        <div class="navbar-header">
-            <fullstack-logo></fullstack-logo>
-        </div>
-        <ul class="nav navbar-nav">
-            <li ng-repeat="item in items" ng-show="!item.auth || isLoggedIn()">
-                <a ui-sref-active="active" ui-sref="{{ item.state }}">{{ item.label }}</a>
-            </li>
-        </ul>
-        <button ng-show="!user" ui-sref="login" class="btn login-button">Login</button>
-        <div ng-show="user" class="welcome">
-            <span>Welcome, {{ user.email }}!</span>
-            <a ng-click="logout()">Logout</a>
+    <div ng-show="isLoggedIn()" class="navbar">
+        <div class="container">
+            <input id='searchbar' type="text" ng-model="searchText" placeholder="search">
+            <div ng-show="user" class="buttons">
+               <!-- <a href='profile'>{{ user.name }}</a> -->
+               <img ng-click='logout()' ng-src='http://i.imgur.com/GF08E1B.png' />
+               <img ng-click='addForm()' ng-src='http://i.imgur.com/Mk3RsG6.png' />
+            </div>
         </div>
     </div>
 </nav>

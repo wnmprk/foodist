@@ -30,8 +30,8 @@ module.exports = function (app) {
                         }
                     });
                 }
-
             }).then(function (userToLogin) {
+                console.log('User has logged in through Google!');
                 done(null, userToLogin);
             }, function (err) {
                 console.error('Error creating user from Google authentication', err);

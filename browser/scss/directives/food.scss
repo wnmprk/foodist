@@ -1,11 +1,11 @@
-.food {
-    background: black;
+.img-wrap{
     width: 350px;
-    height: auto;
-    margin-bottom: 20px;
+    height: 100%;
     padding: 0;
+    margin-bottom: 20px;
     display: inline-block;
     position: relative;
+    overflow: hidden;
     img {
         width: 350px;
         height: auto;
@@ -15,46 +15,51 @@
         -webkit-box-shadow: 6px 6px 21px -1px rgba(143,143,143,1);
         -moz-box-shadow: 6px 6px 21px -1px rgba(143,143,143,1);
         box-shadow: 6px 6px 21px -1px rgba(143,143,143,1);
-        display: block;
-        -webkit-transition: all 0.5s linear;
-        -moz-transition: all 0.5s linear;
-        -ms-transition: all 0.5s linear;
-        -o-transition: all 0.5s linear;
-        transition: all 0.5s linear;
     }
-
-    img:hover {
-        opacity: 0.5;
-    }
-
-    p {
-        position: absolute;
-        text-align: center;
-        width: 80%;
-        height: 0%;
-        margin: auto;
-        top: 0;
-        left: 0;
+    .img-overlay{
+        background-color: black;
         bottom: 0;
-        right: 0;
-        z-index: 1;
-        color: white;
-        font-size: 20px;
-        margin-top: 50px;
+        opacity: 0;
+        filter: alpha(opacity = 0);
+        position: absolute;
+        width: 340px;
+        margin-left: 5px;
+        margin-bottom: 5px;
+        height: 30%;
+        z-index: 1000;
+        text-align: center;
+        font-size: 90%;
+        padding: 10px 40px 0 40px;
+        .name {
+            text-decoration: none;
+            color: white;
+            p {
+                margin-bottom: 0px;
+            }
+        }
+        .name:hover {
+            color: #19d2d5;
+        }
+        .heart {
+            font-size: 20px;
+            cursor: pointer;
+            color: white;
+            text-align: center;
+            width: 20px;
+            margin-left: 47%;
+            margin-bottom: 0;
+        }
+        .heart:hover {
+            color: red;
+        }
     }
-
-    .name:hover {
-        color: #2F4F4F;
-    }
-    
-    .heart {
-        font-size: 40px;
-        margin-top: 150px;
-        margin-left: 30px;
-        cursor: pointer;
-    }
-
-    .heart:hover {
-        color: red;
-    }
+}
+.img-wrap:hover .img-overlay{
+    opacity: 0.65;
+    filter: alpha(opacity = 75);
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -ms-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
 }

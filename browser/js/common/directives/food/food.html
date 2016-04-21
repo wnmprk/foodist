@@ -1,7 +1,9 @@
-<div class="food darken">
+<div class="img-wrap">
     <img ng-src="{{ food.imageUrl }}"/>
-	<a href='{{ food.recipeUrl }}'>
-    <p class='name'>{{ food.name }}</p>
-    </a>
-    <p class="heart" ng-show='isLoggedIn()' ng-click='clickHeart($event, food)'>❤</p>
+    <div class='img-overlay'>
+		<a class='name' href='{{ food.recipeUrl }}'>
+	    <p>{{ food.name }}</p>
+	    </a>
+	    <p class="heart" ng-show='isLoggedIn()' ng-click='clickHeart($event, food)'>❤</p>
+    </div>
 </div>

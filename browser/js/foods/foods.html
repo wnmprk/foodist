@@ -1,10 +1,5 @@
 <div id='foods'>
-    <div class='navbar'>
-	    <input id='searchbar' type="text" ng-model="searchText" placeholder="search">
-        <img class='buttons' ng-show='user' ng-click='logout()' ng-src='http://i.imgur.com/GF08E1B.png' />
-        <img ng-click='addForm()' class='buttons' ng-show='user' ng-src='http://i.imgur.com/Mk3RsG6.png' />
-    </div>
-    <div class='everything' ng-repeat='food in foods | filter:searchText'>
+    <div class='everything' ng-repeat="food in foods | filter:searchText">
         <food></food>
     </div>
 </div>
