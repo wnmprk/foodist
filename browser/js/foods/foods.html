@@ -1,4 +1,12 @@
 <div id='foods'>
+	<div id='navbar'>
+		<input id='searchbar' type="text" ng-model="searchText" placeholder="search">
+		<a class='profile-link' ui-sref='profile'>{{ user.name }}</a>
+		<div ng-show="user" class="buttons">
+		   <img ng-click='addForm()' ng-src='http://i.imgur.com/Mk3RsG6.png' />
+		   <img ng-click='logout()' ng-src='http://i.imgur.com/GF08E1B.png' />
+		</div>
+	</div>
     <div class='everything' ng-repeat="food in foods | filter:searchText">
         <food></food>
     </div>

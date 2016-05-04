@@ -1,6 +1,46 @@
 #foods {
 	text-align: center;
-	margin-top: 150px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	#navbar {
+	    background-color: rgba(0, 0, 0, 0.1);
+	    margin-bottom: 0px;
+	    width: 100%;
+	    .profile-link {
+	    }
+	    .container {
+	        padding: 0px;
+	    }
+	    img {
+	        width: 50px;
+	        cursor: pointer;
+	        margin-right: 10px;
+	    }
+	    .buttons {
+	        margin: 20px 15px;
+	        float: right;
+	    }
+	    input {
+	        width: 40%;
+	        height: 40px;
+	        background-color: transparent;
+	        margin: 20px 20px;
+	        float: left;
+	    }
+	    input[type=text] {
+	        font-size: 20px;
+	        border: 0;
+	        border-bottom: 5px solid #2F4F4F;
+	        outline: 0;
+	        background-image: url('http://i.imgur.com/jLDrMpU.png');
+	        background-position: 5px 0px;
+	        background-size: 30px; 
+	        background-repeat: no-repeat;
+	        padding-left: 45px;
+	        padding-bottom: 10px;
+	    }
+	}
 }
 
 $modal-color: #19d2d5;

@@ -13,24 +13,4 @@
         margin: 20px 15px;
         float: right;
     }
-    input {
-        background: transparent;
-        width: 40%;
-        margin: 30px;
-    }
-    input[type=text] {
-        font-size: 20px;
-        border: 0;
-        border-bottom: 5px solid #2F4F4F;
-        outline: 0;
-        background-image: url('http://i.imgur.com/jLDrMpU.png');
-        background-position: 5px 0px;
-        background-size: 30px; 
-        background-repeat: no-repeat;
-        padding-left: 45px;
-        padding-bottom: 10px;
-    }
-    input:focus {
-        outline: none;
-    }
 }

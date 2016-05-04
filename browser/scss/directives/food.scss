@@ -1,11 +1,9 @@
 .img-wrap{
     width: 350px;
     height: 100%;
-    padding: 0;
-    margin-bottom: 20px;
-    display: inline-block;
+    margin: 20px 20px;
     position: relative;
-    overflow: hidden;
+    justify-content: space-around;
     img {
         width: 350px;
         height: auto;
